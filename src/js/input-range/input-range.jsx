@@ -38,6 +38,8 @@ export default class InputRange extends React.Component {
       onChangeComplete: PropTypes.func,
       step: PropTypes.number,
       value: valuePropType,
+      renderTrackBefore: PropTypes.func,
+      renderTrackAfter: PropTypes.func,
     };
   }
 
@@ -54,6 +56,8 @@ export default class InputRange extends React.Component {
       maxValue: 10,
       minValue: 0,
       step: 1,
+      renderTrackBefore: () => { return; },
+      renderTrackAfter: () => { return; },
     };
   }
 
@@ -679,8 +683,9 @@ export default class InputRange extends React.Component {
           percentages={percentages}
           onTrackDrag={this.handleTrackDrag}
           onTrackMouseDown={this.handleTrackMouseDown}>
-
+          {this.props.renderTrackBefore()}
           {this.renderSliders()}
+          {this.props.renderTrackAfter()}
         </Track>
 
         <Label
