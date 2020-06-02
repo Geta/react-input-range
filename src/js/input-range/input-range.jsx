@@ -56,8 +56,8 @@ export default class InputRange extends React.Component {
       maxValue: 10,
       minValue: 0,
       step: 1,
-      renderTrackBefore: () => { return; },
-      renderTrackAfter: () => { return; },
+      renderTrackBefore: () => {},
+      renderTrackAfter: () => {},
     };
   }
 

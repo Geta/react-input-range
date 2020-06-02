@@ -7,7 +7,6 @@ const webpackConfig = {
   devtool: 'source-map',
   target: 'web',
   entry: {
-    'react-input-range.css': './src/scss/index.scss',
     'react-input-range.js': './src/js/index.js',
     'react-input-range.min.js': './src/js/index.js',
   },
@@ -23,13 +22,6 @@ const webpackConfig = {
         include: path.resolve(__dirname, 'src'),
         loader: 'babel-loader',
         test: /\.jsx?$/,
-      },
-      {
-        include: path.resolve(__dirname, 'src'),
-        loader: ExtractTextPlugin.extract({
-          use: ['css-loader', 'postcss-loader', 'sass-loader'],
-        }),
-        test: /\.scss$/,
       },
     ],
   },
